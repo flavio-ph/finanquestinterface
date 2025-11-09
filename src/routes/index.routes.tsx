@@ -4,6 +4,11 @@ import Login from "../components/pages/login";
 import BottomRoutes from "./bottom.routes";
 import Cadastro from "../components/pages/cadastro";
 import Home from "../components/pages/home";
+import Profile from "../components/pages/perfil";
+import Transacao from "../components/pages/transacao";
+import Extrato from "../components/pages/extrato";
+import Metas from "../components/pages/metas";
+import Relatorio from "../components/pages/relatorio";
 
 export default function Routes(){
 
@@ -35,6 +40,26 @@ export default function Routes(){
                 <Stack.Screen
                 name="Home"
                 component={Home}
+                />
+                <Stack.Screen
+                name="Profile"
+                component={Profile}
+                />
+                <Stack.Screen
+                name="Transacao"
+                component={Transacao}
+                />
+                <Stack.Screen
+                name="Extrato"
+                component={Extrato}
+                />
+                <Stack.Screen
+                name="Metas"
+                component={Metas}
+                />
+                <Stack.Screen
+                name="Relatorio"
+                component={Relatorio}
                 />
         </Stack.Navigator>
     )
