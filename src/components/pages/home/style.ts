@@ -16,6 +16,7 @@ export const COLORS = {
 
 export const style = StyleSheet.create({
     container: {
+        paddingTop: 24,
         flex: 1,
         backgroundColor: COLORS.background,
     },
@@ -39,6 +40,12 @@ export const style = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row'
     },
+
+    textoPerfil: {
+        width: '100%',
+        height: '100%',
+    },
+
     welcomeText: {
         fontSize: 16,
         color: COLORS.textSecondary,

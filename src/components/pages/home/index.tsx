@@ -2,6 +2,9 @@ import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { style, COLORS } from './style'; 
 import { FontAwesome } from '@expo/vector-icons'; 
+import { useNavigation, NavigationProp } from "@react-navigation/native";
+import Profile from '../perfil';
+
 
 export default function Home() {
 
@@ -9,6 +12,15 @@ export default function Home() {
     const userLevel = 12;
     const userXP = 70;
     const xpToNextLevel = 100;
+    const navigation = useNavigation<NavigationProp<any>>();
+
+    
+    function irParaPerfil() {
+        navigation.navigate("Profile")
+    }
+    function irParaTransacao() {
+        navigation.navigate("Relatorio")
+    }
 
     return (
         <View style={style.container}>
@@ -16,7 +28,9 @@ export default function Home() {
                 
                 <View style={style.header}>
                     <View style={style.userProfile}>
-                        <View style={style.fotoperfil}></View>
+                        <View style={style.fotoperfil}>
+                            <Text onPress={irParaPerfil} style={style.textoPerfil}></Text>
+                        </View>
                         <View style={style.nomeNivel}>
 
                              <Text style={style.welcomeText}>Olá, {userName}</Text>
@@ -25,6 +39,8 @@ export default function Home() {
                         </View>
                        
                     </View>
+
+                    
                     <View style={style.xpStatus}>
                         <Text style={style.xpLabel}>Progresso (XP)</Text>
                         <View style={style.xpBarTrack}>
@@ -105,7 +121,7 @@ export default function Home() {
 
             </ScrollView>
 
-            <TouchableOpacity style={style.fab} onPress={() => { /* Navegar para Adicionar Transação */ }}>
+            <TouchableOpacity style={style.fab} onPress={irParaTransacao}>
                 <FontAwesome name="plus" size={24} color={COLORS.textPrimary} />
             </TouchableOpacity>
         </View>
